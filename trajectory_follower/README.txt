@@ -1,1 +1,0 @@
-This folder is used for the controller for white lane detection.
