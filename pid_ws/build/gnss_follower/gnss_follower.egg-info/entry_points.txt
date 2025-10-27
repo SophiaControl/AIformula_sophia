@@ -1,0 +1,9 @@
+[console_scripts]
+lya_follower_gnss_0303 = gnss_follower.lya_follower_gnss_0303:main
+lya_follower_gnss_0315 = gnss_follower.lya_follower_gnss_0315:main
+lya_gnss_base0316 = gnss_follower.lya_gnss_base0316:main
+lya_gnss_plus_opencv0316 = gnss_follower.lya_gnss_plus_opencv0316:main
+lya_gnss_plus_path0316 = gnss_follower.lya_gnss_plus_path0316:main
+path_gnss_0303 = gnss_follower.path_gnss_0303:main
+path_gnss_0315 = gnss_follower.path_gnss_0315:main
+

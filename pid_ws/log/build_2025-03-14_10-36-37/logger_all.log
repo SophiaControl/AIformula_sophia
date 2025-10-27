@@ -1,0 +1,270 @@
+[0.585s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.585s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff89eee730>>, merge_install=False, metas=['./colcon.meta'], mixin=None, mixin_files=None, mixin_verb=('build',), packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=12, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff89eee730>, verb_name='build', verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffff89eeee50>)
+[0.879s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.880s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.880s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/nvidia/pid_ws'
+[0.880s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.881s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.901s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.901s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.902s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.902s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.902s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.902s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.902s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.902s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.902s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extensions ['ignore', 'ignore_ament_install']
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extension 'ignore'
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extension 'ignore_ament_install'
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extensions ['colcon_pkg']
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extension 'colcon_pkg'
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extensions ['colcon_meta']
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extension 'colcon_meta'
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extensions ['ros']
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extension 'ros'
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extensions ['cmake', 'python']
+[0.903s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extension 'cmake'
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extension 'python'
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extensions ['python_setup_py']
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(lane_analysis_data) by extension 'python_setup_py'
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.904s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extensions ['ignore', 'ignore_ament_install']
+[0.905s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extension 'ignore'
+[0.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extension 'ignore_ament_install'
+[0.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extensions ['colcon_pkg']
+[0.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extension 'colcon_pkg'
+[0.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extensions ['colcon_meta']
+[0.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extension 'colcon_meta'
+[0.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extensions ['ros']
+[0.906s] Level 1:colcon.colcon_core.package_identification:_identify(src/gnss_follower) by extension 'ros'
+[0.917s] DEBUG:colcon.colcon_core.package_identification:Package 'src/gnss_follower' with type 'ros.ament_python' and name 'gnss_follower'
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extensions ['ignore', 'ignore_ament_install']
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extension 'ignore'
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extension 'ignore_ament_install'
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extensions ['colcon_pkg']
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extension 'colcon_pkg'
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extensions ['colcon_meta']
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extension 'colcon_meta'
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extensions ['ros']
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extension 'ros'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extensions ['cmake', 'python']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extension 'cmake'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extension 'python'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extensions ['python_setup_py']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/lane_analysis_data) by extension 'python_setup_py'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extension 'ignore'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extension 'ignore_ament_install'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extensions ['colcon_pkg']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extension 'colcon_pkg'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extensions ['colcon_meta']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extension 'colcon_meta'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extensions ['ros']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(src/pid_controller) by extension 'ros'
+[0.921s] DEBUG:colcon.colcon_core.package_identification:Package 'src/pid_controller' with type 'ros.ament_cmake' and name 'pid_controller'
+[0.921s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extensions ['ignore', 'ignore_ament_install']
+[0.921s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extension 'ignore'
+[0.921s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extension 'ignore_ament_install'
+[0.921s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extensions ['colcon_pkg']
+[0.921s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extension 'colcon_pkg'
+[0.921s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extensions ['colcon_meta']
+[0.922s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extension 'colcon_meta'
+[0.922s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extensions ['ros']
+[0.922s] Level 1:colcon.colcon_core.package_identification:_identify(src/trajectory_follower) by extension 'ros'
+[0.923s] DEBUG:colcon.colcon_core.package_identification:Package 'src/trajectory_follower' with type 'ros.ament_python' and name 'trajectory_follower'
+[0.923s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.923s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.923s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.923s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.923s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.961s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.961s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.969s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/nvidia/pid_ws/install
+[0.970s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 24 installed packages in /home/nvidia/workspace/ros2_ws/install
+[0.972s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 347 installed packages in /opt/ros/foxy
+[0.998s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'cmake_args' from command line to 'None'
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'cmake_target' from command line to 'None'
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'cmake_clean_cache' from command line to 'False'
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'cmake_clean_first' from command line to 'False'
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'cmake_force_configure' from command line to 'False'
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'ament_cmake_args' from command line to 'None'
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'catkin_cmake_args' from command line to 'None'
+[1.183s] Level 5:colcon.colcon_core.verb:set package 'gnss_follower' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.183s] DEBUG:colcon.colcon_core.verb:Building package 'gnss_follower' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nvidia/pid_ws/build/gnss_follower', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nvidia/pid_ws/install/gnss_follower', 'merge_install': False, 'path': '/home/nvidia/pid_ws/src/gnss_follower', 'symlink_install': False, 'test_result_base': None}
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'cmake_args' from command line to 'None'
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'cmake_target' from command line to 'None'
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'cmake_clean_first' from command line to 'False'
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'cmake_force_configure' from command line to 'False'
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'ament_cmake_args' from command line to 'None'
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[1.184s] Level 5:colcon.colcon_core.verb:set package 'pid_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.184s] DEBUG:colcon.colcon_core.verb:Building package 'pid_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nvidia/pid_ws/build/pid_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nvidia/pid_ws/install/pid_controller', 'merge_install': False, 'path': '/home/nvidia/pid_ws/src/pid_controller', 'symlink_install': False, 'test_result_base': None}
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'cmake_args' from command line to 'None'
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'cmake_target' from command line to 'None'
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'cmake_clean_cache' from command line to 'False'
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'cmake_clean_first' from command line to 'False'
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'cmake_force_configure' from command line to 'False'
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'ament_cmake_args' from command line to 'None'
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'catkin_cmake_args' from command line to 'None'
+[1.185s] Level 5:colcon.colcon_core.verb:set package 'trajectory_follower' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.185s] DEBUG:colcon.colcon_core.verb:Building package 'trajectory_follower' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/nvidia/pid_ws/build/trajectory_follower', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/nvidia/pid_ws/install/trajectory_follower', 'merge_install': False, 'path': '/home/nvidia/pid_ws/src/trajectory_follower', 'symlink_install': False, 'test_result_base': None}
+[1.185s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.187s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.187s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/nvidia/pid_ws/src/gnss_follower' with build type 'ament_python'
+[1.188s] Level 1:colcon.colcon_core.shell:create_environment_hook('gnss_follower', 'ament_prefix_path')
+[1.203s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.203s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/hook/ament_prefix_path.ps1'
+[1.205s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/hook/ament_prefix_path.dsv'
+[1.206s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/hook/ament_prefix_path.sh'
+[1.207s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.207s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.219s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/nvidia/pid_ws/src/pid_controller' with build type 'ament_cmake'
+[1.219s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/nvidia/pid_ws/src/pid_controller'
+[1.220s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.220s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.233s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/nvidia/pid_ws/src/trajectory_follower' with build type 'ament_python'
+[1.234s] Level 1:colcon.colcon_core.shell:create_environment_hook('trajectory_follower', 'ament_prefix_path')
+[1.235s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/hook/ament_prefix_path.ps1'
+[1.236s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/hook/ament_prefix_path.dsv'
+[1.236s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/hook/ament_prefix_path.sh'
+[1.237s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.238s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.660s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/nvidia/pid_ws/src/gnss_follower'
+[1.661s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.661s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.687s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nvidia/pid_ws/build/pid_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake --build /home/nvidia/pid_ws/build/pid_controller -- -j12 -l12
+[2.104s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/nvidia/pid_ws/src/trajectory_follower'
+[2.105s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.105s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.143s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nvidia/pid_ws/build/pid_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake --build /home/nvidia/pid_ws/build/pid_controller -- -j12 -l12
+[2.171s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nvidia/pid_ws/build/pid_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake --install /home/nvidia/pid_ws/build/pid_controller
+[2.197s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pid_controller)
+[2.198s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nvidia/pid_ws/build/pid_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake --install /home/nvidia/pid_ws/build/pid_controller
+[2.210s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller' for CMake module files
+[2.211s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller' for CMake config files
+[2.211s] Level 1:colcon.colcon_core.shell:create_environment_hook('pid_controller', 'cmake_prefix_path')
+[2.211s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/hook/cmake_prefix_path.ps1'
+[2.213s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/hook/cmake_prefix_path.dsv'
+[2.213s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/hook/cmake_prefix_path.sh'
+[2.215s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/lib'
+[2.215s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/bin'
+[2.215s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/lib/pkgconfig/pid_controller.pc'
+[2.215s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/lib/python3.8/site-packages'
+[2.216s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/bin'
+[2.216s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.ps1'
+[2.218s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.dsv'
+[2.219s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.sh'
+[2.221s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.bash'
+[2.223s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.zsh'
+[2.225s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nvidia/pid_ws/install/pid_controller/share/colcon-core/packages/pid_controller)
+[2.226s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pid_controller)
+[2.226s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller' for CMake module files
+[2.227s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller' for CMake config files
+[2.227s] Level 1:colcon.colcon_core.shell:create_environment_hook('pid_controller', 'cmake_prefix_path')
+[2.228s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/hook/cmake_prefix_path.ps1'
+[2.229s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/hook/cmake_prefix_path.dsv'
+[2.229s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/hook/cmake_prefix_path.sh'
+[2.230s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/lib'
+[2.230s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/bin'
+[2.230s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/lib/pkgconfig/pid_controller.pc'
+[2.231s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/lib/python3.8/site-packages'
+[2.231s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/pid_controller/bin'
+[2.231s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.ps1'
+[2.232s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.dsv'
+[2.233s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.sh'
+[2.233s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.bash'
+[2.234s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.zsh'
+[2.235s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nvidia/pid_ws/install/pid_controller/share/colcon-core/packages/pid_controller)
+[3.027s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nvidia/pid_ws/src/gnss_follower': PYTHONPATH=/home/nvidia/pid_ws/build/gnss_follower/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gnss_follower build --build-base /home/nvidia/pid_ws/build/gnss_follower/build install --record /home/nvidia/pid_ws/build/gnss_follower/install.log --install-scripts $base/lib/gnss_follower --single-version-externally-managed install_data
+[3.039s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/nvidia/pid_ws/src/trajectory_follower': PYTHONPATH=/home/nvidia/pid_ws/build/trajectory_follower/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/trajectory_follower build --build-base /home/nvidia/pid_ws/build/trajectory_follower/build install --record /home/nvidia/pid_ws/build/trajectory_follower/install.log --install-scripts $base/lib/trajectory_follower --single-version-externally-managed install_data
+[3.590s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/gnss_follower' for CMake module files
+[3.593s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nvidia/pid_ws/src/gnss_follower' returned '0': PYTHONPATH=/home/nvidia/pid_ws/build/gnss_follower/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gnss_follower build --build-base /home/nvidia/pid_ws/build/gnss_follower/build install --record /home/nvidia/pid_ws/build/gnss_follower/install.log --install-scripts $base/lib/gnss_follower --single-version-externally-managed install_data
+[3.594s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/gnss_follower' for CMake config files
+[3.596s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/gnss_follower/lib'
+[3.597s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/gnss_follower/bin'
+[3.597s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/gnss_follower/lib/pkgconfig/gnss_follower.pc'
+[3.598s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages'
+[3.598s] Level 1:colcon.colcon_core.shell:create_environment_hook('gnss_follower', 'pythonpath')
+[3.599s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/hook/pythonpath.ps1'
+[3.602s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/hook/pythonpath.dsv'
+[3.605s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/hook/pythonpath.sh'
+[3.607s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/gnss_follower/bin'
+[3.607s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(gnss_follower)
+[3.609s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/package.ps1'
+[3.611s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/package.dsv'
+[3.612s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/package.sh'
+[3.614s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/package.bash'
+[3.616s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/gnss_follower/share/gnss_follower/package.zsh'
+[3.617s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nvidia/pid_ws/install/gnss_follower/share/colcon-core/packages/gnss_follower)
+[3.620s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/trajectory_follower' for CMake module files
+[3.623s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/nvidia/pid_ws/src/trajectory_follower' returned '0': PYTHONPATH=/home/nvidia/pid_ws/build/trajectory_follower/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/trajectory_follower build --build-base /home/nvidia/pid_ws/build/trajectory_follower/build install --record /home/nvidia/pid_ws/build/trajectory_follower/install.log --install-scripts $base/lib/trajectory_follower --single-version-externally-managed install_data
+[3.624s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/trajectory_follower' for CMake config files
+[3.626s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/trajectory_follower/lib'
+[3.627s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/trajectory_follower/bin'
+[3.627s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/trajectory_follower/lib/pkgconfig/trajectory_follower.pc'
+[3.628s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages'
+[3.628s] Level 1:colcon.colcon_core.shell:create_environment_hook('trajectory_follower', 'pythonpath')
+[3.629s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/hook/pythonpath.ps1'
+[3.630s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/hook/pythonpath.dsv'
+[3.632s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/hook/pythonpath.sh'
+[3.632s] Level 1:colcon.colcon_core.environment:checking '/home/nvidia/pid_ws/install/trajectory_follower/bin'
+[3.632s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(trajectory_follower)
+[3.633s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/package.ps1'
+[3.634s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/package.dsv'
+[3.637s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/package.sh'
+[3.638s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/package.bash'
+[3.639s] INFO:colcon.colcon_core.shell:Creating package script '/home/nvidia/pid_ws/install/trajectory_follower/share/trajectory_follower/package.zsh'
+[3.640s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/nvidia/pid_ws/install/trajectory_follower/share/colcon-core/packages/trajectory_follower)
+[3.641s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.642s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.642s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.643s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.659s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.659s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.659s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.709s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.710s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/nvidia/pid_ws/install/local_setup.ps1'
+[3.713s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/nvidia/pid_ws/install/_local_setup_util_ps1.py'
+[3.717s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/nvidia/pid_ws/install/setup.ps1'
+[3.722s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/nvidia/pid_ws/install/local_setup.sh'
+[3.724s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/nvidia/pid_ws/install/_local_setup_util_sh.py'
+[3.725s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/nvidia/pid_ws/install/setup.sh'
+[3.730s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/nvidia/pid_ws/install/local_setup.bash'
+[3.731s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/nvidia/pid_ws/install/setup.bash'
+[3.735s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/nvidia/pid_ws/install/local_setup.zsh'
+[3.737s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/nvidia/pid_ws/install/setup.zsh'
