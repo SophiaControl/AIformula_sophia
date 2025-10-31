@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    wheel:
+      #tread: 0.846      #[m]
+      tread: 0.60      #[m]
+      diameter: 0.254  #[m]
+      gear_ratio: 1.1
