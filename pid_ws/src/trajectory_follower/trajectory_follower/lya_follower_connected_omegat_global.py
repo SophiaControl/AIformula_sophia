@@ -63,10 +63,10 @@ class TrajectoryFollower(Node):
         # ---- (5) 初始化LYA控制器 ----
         self.lya = LYAController(
             v_t=2.0, 
-            lambda_v=0.017, 
-            lambda_a=0.23, 
-            k1=0.8, 
-            k2=40
+            lambda_v=0.014, 
+            lambda_a=0.29, 
+            k1=0.70, 
+            k2=48
         )
         # (此时 self.lya.omega_t = 0.0)
 
