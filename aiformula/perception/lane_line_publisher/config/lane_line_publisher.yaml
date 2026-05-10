@@ -3,10 +3,12 @@
     lane_line_publisher:
       queue_size: 10    # queue size for subscribers and publishers
       roi:              # interest region in the vehicle frame [m]
-        xmin: 0.0
-        xmax: 15.0
-        ymin: -5.0
-        ymax: 5.0
+        # xmin: 0.0
+        xmin: 1.5
+        # xmax: 15.0
+        xmax: 10.0
+        ymin: -3.0
+        ymax: 3.0
       spacing: 0.5      # spacing between published lane line points [m]
     
     lane_pixel_finder:

@@ -50,37 +50,48 @@ void LanePixelFinder::searchMask(const cv::Mat& binary_mask, LaneLines& lane_lin
     int left = 0;
     int right = cols - 1;
     int center = (left + right) / 2;
+    //int pic_center = (left + right) / 2;
 
     for (int row = bottom; row >= top; --row) {
-        const auto row_ptr = binary_mask.ptr<uchar>(row);
-        if (row_ptr[center]) break;
+    const auto row_ptr = binary_mask.ptr<uchar>(row);
 
-        bool found_left = false;
-        const auto left_bound = std::max(0, left - tolerance_);
-        for (int col = center; col >= left_bound; --col) {
-            if (row_ptr[col]) {
-                left = col;
-                found_left = true;
-                break;
-            }
+    if (row_ptr[center]) 
+        break;
+
+    bool found_left = false;
+    const auto left_bound = std::max(0, left - tolerance_);
+    for (int col = center; col >= left_bound; --col) {
+        if (row_ptr[col]) {
+            left = col;
+            found_left = true;
+            break;
         }
-
-        bool found_right = false;
-        const auto right_bound = std::min(cols - 1, right + tolerance_);
-        for (int col = center; col <= right_bound; ++col) {
-            if (row_ptr[col]) {
-                right = col;
-                found_right = true;
-                break;
-            }
-        }
-
-        center = (left + right) / 2;
-
-        if (found_left) lane_lines.left.pixels.emplace_back(left, row);
-        if (found_right) lane_lines.right.pixels.emplace_back(right, row);
-        if (found_left && found_right) lane_lines.center.pixels.emplace_back(center, row);
     }
+
+    bool found_right = false;
+    const auto right_bound = std::min(cols - 1, right + tolerance_);
+    for (int col = center; col <= right_bound; ++col) {
+        if (row_ptr[col]) {
+            right = col;
+            found_right = true;
+            break;
+        }
+    }
+
+    if (found_left)
+        lane_lines.left.pixels.emplace_back(left, row);
+
+    if (found_right)
+        lane_lines.right.pixels.emplace_back(right, row);
+
+    // 如果左右有任意一边没找到，就跳过 center 更新
+    if (!found_left || !found_right)
+        continue;
+
+    center = (left + right) / 2;
+
+    lane_lines.center.pixels.emplace_back(center, row);
 }
 
+}
 }  // namespace aiformula

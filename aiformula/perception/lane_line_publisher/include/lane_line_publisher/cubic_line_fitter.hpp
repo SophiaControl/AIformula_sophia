@@ -1,6 +1,8 @@
 #ifndef CUBIC_LINE_FITTER_HPP
 #define CUBIC_LINE_FITTER_HPP
 
+#include <eigen3/Eigen/Core>
+#include <eigen3/Eigen/Dense>
 #include <eigen3/Eigen/Geometry>
 #include <memory>
 
@@ -17,7 +19,9 @@ public:
                            std::vector<Eigen::Vector3d>& extrapolated) const;
 
 private:
-    void calcCoefficients(const std::vector<Eigen::Vector3d>& points, Eigen::Vector4d& coefficients) const;
+    // 这里必须改成 Vector3d！！！！！
+    void calcCoefficients(const std::vector<Eigen::Vector3d>& points,
+                          Eigen::Vector3d& coefficients) const;
 
     int rank_, num_points_;
     Eigen::ArrayXd x_coords_;

@@ -20,7 +20,20 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        'b_spline = obsticle_avoidence.b_spline:main',
+        'oa_old = obsticle_avoidence.oa_old:main',
+        'oa_new = obsticle_avoidence.oa_new:main',
+        'oa_neo = obsticle_avoidence.oa_neo:main',
+        'oa_neov1.2 = obsticle_avoidence.oa_neov1.2:main',
+        'bspline_test_oa_1 = obsticle_avoidence.bspline_test_oa_1:main',
+        'bspline_test_oa_2 = obsticle_avoidence.bspline_test_oa_2:main',
+        'bspline_test_oa_3 = obsticle_avoidence.bspline_test_oa_3:main',
+        'b_spline_final_1 = obsticle_avoidence.b_spline_final_1:main',
+        'b_spline_final_2 = obsticle_avoidence.b_spline_final_2:main',
+        'b_spline_final_3 = obsticle_avoidence.b_spline_final_3:main',
+        'b_spline_final_3re = obsticle_avoidence.b_spline_final_3re:main',
+        'b_spline_final_3b = obsticle_avoidence.b_spline_final_3b:main',
+        'data_record = obsticle_avoidence.data_record:main',
+        'b_spline_final_1a = obsticle_avoidence.b_spline_final_1a:main',
         ],
     },
 )

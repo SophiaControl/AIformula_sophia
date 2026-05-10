@@ -16,13 +16,24 @@ def generate_launch_description():
 
     launch_args = (
         DeclareLaunchArgument(
-            "weight_path",
-            default_value=osp.join(get_package_share_directory("road_detector"), "weights", "End-to-end.pth"),
-            description="Path to the weight pth file."),
+            "onnx_path",
+            default_value=osp.join(
+                get_package_share_directory(PACKAGE_NAME),
+                "weights",
+                "yolopv2.onnx",
+            ),
+            description="Path to the YOLOPv2 ONNX file.",
+        ),
         DeclareLaunchArgument(
             "use_architecture",
-            default_value= "0",
-            description="cuda device, i.e. 0 or cpu",),
+            default_value="cuda",   # 改成 "cuda" 就走 GPU provider
+            description="cpu or cuda",
+        ),
+        DeclareLaunchArgument(
+            "ll_threshold",
+            default_value="0.5",
+            description="Lane-line threshold for ll output (single-channel).",
+        ),
     )
 
     road_detector = Node(
@@ -30,26 +41,24 @@ def generate_launch_description():
         executable=PACKAGE_NAME,
         name=PACKAGE_NAME,
         namespace="/aiformula_perception",
-        output = "screen",
+        output="screen",
         parameters=[
             [*ROS_PARAM_CONFIG],
-            # Overriding
             {
-                "weight_path": LaunchConfiguration("weight_path"),
+                "onnx_path": LaunchConfiguration("onnx_path"),
                 "use_architecture": LaunchConfiguration("use_architecture"),
+                "ll_threshold": LaunchConfiguration("ll_threshold"),
             },
         ],
         remappings=[
-            ("sub_image",
-             TOPIC_NAMES["sensing"]["zedx"]["left_image"]["undistorted"]),
-            ("pub_mask_image",
-             TOPIC_NAMES["perception"]["mask_image"]),
-            ("pub_annotated_mask_image",
-             TOPIC_NAMES["visualization"]["annotated_mask_image"]),
+            ("sub_image", TOPIC_NAMES["sensing"]["zedx"]["left_image"]["undistorted"]),
+            ("pub_mask_image_roi", TOPIC_NAMES["perception"]["mask_image"]),
+            ("pub_annotated_mask_image", TOPIC_NAMES["visualization"]["annotated_mask_image"]),
         ],
     )
-
+	##("pub_mask_image", TOPIC_NAMES["perception"]["mask_image"]),
     return LaunchDescription([
         *launch_args,
         road_detector,
     ])
+
