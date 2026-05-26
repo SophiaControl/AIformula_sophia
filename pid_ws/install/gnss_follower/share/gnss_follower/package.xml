@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>gnss_follower</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="nvidia@todo.todo">nvidia</maintainer>
+  <license>TODO: License declaration</license>
+
+  <!-- 指定这是一个基于 ament_python 的 Python ROS2 包 -->
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- 需要在编译时（或解析依赖时）知道的包 -->
+  <!-- 如果只是运行时使用，还可以放到 exec_depend，下方例子中均做了声明 -->
+  <build_depend>rclpy</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+
+  <!-- 运行时依赖 -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+
+  <!-- Python 第三方库（若 rosdep 数据库未匹配，需要手工安装 pip/apt） -->
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-scipy</exec_depend>
+  <exec_depend>python3-pyproj</exec_depend>
+
+  <!-- 测试依赖 (保留你原先的) -->
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <!-- 声明用 ament_python 来构建 -->
+    <build_type>ament_python</build_type>
+  </export>
+</package>

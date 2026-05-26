@@ -1,0 +1,28 @@
+running egg_info
+writing ../../build/gnss_follower/gnss_follower.egg-info/PKG-INFO
+writing dependency_links to ../../build/gnss_follower/gnss_follower.egg-info/dependency_links.txt
+writing entry points to ../../build/gnss_follower/gnss_follower.egg-info/entry_points.txt
+writing requirements to ../../build/gnss_follower/gnss_follower.egg-info/requires.txt
+writing top-level names to ../../build/gnss_follower/gnss_follower.egg-info/top_level.txt
+reading manifest file '../../build/gnss_follower/gnss_follower.egg-info/SOURCES.txt'
+writing manifest file '../../build/gnss_follower/gnss_follower.egg-info/SOURCES.txt'
+running build
+running build_py
+copying gnss_follower/lya_follower_gnss_0315.py -> /home/nvidia/pid_ws/build/gnss_follower/build/lib/gnss_follower
+running install
+running install_lib
+copying /home/nvidia/pid_ws/build/gnss_follower/build/lib/gnss_follower/lya_follower_gnss_0315.py -> /home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages/gnss_follower
+byte-compiling /home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages/gnss_follower/lya_follower_gnss_0315.py to lya_follower_gnss_0315.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages/gnss_follower-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/gnss_follower/gnss_follower.egg-info to /home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages/gnss_follower-0.0.0-py3.8.egg-info
+running install_scripts
+Installing lya_follower_gnss_0303 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+Installing lya_follower_gnss_0315 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+Installing lya_gnss_base0316 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+Installing lya_gnss_plus_opencv0316 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+Installing lya_gnss_plus_path0316 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+Installing path_gnss_0303 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+Installing path_gnss_0315 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+writing list of installed files to '/home/nvidia/pid_ws/build/gnss_follower/install.log'
