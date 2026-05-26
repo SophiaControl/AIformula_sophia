@@ -1,0 +1,368 @@
+lane_line_publisher_visualizer.py 640x360 适配与完整逻辑说明
+
+一、这次为什么要改
+
+当前验证用 mask_image 已经从 1920x1080 变成 640x360。
+旧代码默认使用 aiformula-hd1080 的相机内参：
+
+fx = 763.1748657226562
+fy = 763.1748657226562
+cx = 990.0390625
+cy = 543.4489135742188
+reference image size = 1920x1080
+
+如果直接把这组 1920x1080 内参用于 640x360 mask，像素归一化会错误：
+
+normalized_ray = inv(K) * [u, v, 1]^T
+
+这里的 u/v 已经是 640x360 坐标，但 K 仍然认为图像中心在 cx=990, cy=543。
+结果就是光线方向错误，投影到 vehicle frame 后很多点会落不到合理地面位置，二次拟合和 point cloud 输出会消失。
+
+二、这次具体修改了什么
+
+1. 相机内参改为按输入图像尺寸自动缩放
+
+代码中新增 camera_reference_size。
+profile = aiformula-hd1080 时，基础内参仍然保存为 1920x1080 的 K，但实际投影前会按当前 mask 尺寸缩放：
+
+sx = current_width / reference_width
+sy = current_height / reference_height
+
+fx_scaled = fx * sx
+cx_scaled = cx * sx
+fy_scaled = fy * sy
+cy_scaled = cy * sy
+
+对于 640x360 输入，sx = 640 / 1920 = 1/3，sy = 360 / 1080 = 1/3。
+所以 hd1080 profile 会自动变成接近：
+
+fx = 254.3916
+fy = 254.3916
+cx = 330.0130
+cy = 181.1496
+
+这样 pixel -> camera ray -> vehicle frame 投影会重新对齐 640x360 mask。
+
+2. 像素坐标归一化逻辑
+
+投影时使用：
+
+homogeneous_pixel = [u, v, 1]
+camera_ray = homogeneous_pixel * inv(K_scaled)^T
+vehicle_ray = camera_ray * R_vehicle_camera^T
+
+然后用 z=0 地面平面求交：
+
+scale = -vehicle_t_camera.z / vehicle_ray.z
+vehicle_point = vehicle_t_camera + vehicle_ray * scale
+
+这里最关键的是 K_scaled 必须和当前 mask 的 width/height 匹配。
+
+3. 动态 ROI 宽度改为按图像宽度缩放
+
+原来 tracking ROI 的宽度参数是按 1920 宽图像调的：
+
+margin_far base = 42 px
+margin_near base = 125 px
+
+在 640 宽图像上如果仍然用 42/125 px，相对宽度会变成原来的三倍，ROI 会过宽。
+现在改为：
+
+width_scale = current_width / 1920
+margin_far_scaled = margin_far_base * width_scale
+margin_near_scaled = margin_near_base * width_scale
+
+所以 640x360 下大约是：
+
+margin_far = 42 * 640 / 1920 = 14 px
+margin_near = 125 * 640 / 1920 = 41.7 px
+
+tracking ROI 是围绕上一帧一次拟合线 u = a*v + b 生成的带状区域：
+
+u_pred(row) = a * row + b
+u_min(row) = u_pred(row) - margin(row)
+u_max(row) = u_pred(row) + margin(row)
+
+margin(row) 会从远处到近处线性变宽：
+
+ratio = (row - v_top) / (v_bottom - v_top)
+margin(row) = margin_far_scaled + (margin_near_scaled - margin_far_scaled) * ratio
+
+所以右上角图二中：
+
+绿色动态 ROI = 左线当前使用的 ROI
+红色动态 ROI = 右线当前使用的 ROI
+
+如果当前 side 是 tracking 模式，它就是围绕上一帧一次拟合线生成的动态窄带。
+如果当前 side 是 init 模式，它不是窄带，而是从图像中心线左右分半区生成的初始化 ROI。
+
+4. 左右线最小间隔也改为按图像宽度缩放
+
+原来 min_lane_spacing_far 和 min_lane_spacing_near 也是 1920 宽图像下的像素值。
+现在同样乘 current_width / 1920，避免 640 输入下间隔阈值过大，错误拒绝正常的左右线。
+
+5. connected component 面积阈值改为按图像面积缩放
+
+原来 min_area = 100 是 1920x1080 下的面积阈值。
+现在实际过滤阈值为：
+
+scaled_min_area = min_area * (current_width * current_height) / (1920 * 1080)
+
+640x360 下大约是 100 / 9 = 11。
+这样不会因为图像变小导致真实车道线 component 被错误过滤掉。
+
+6. 蓝色整体 ROI 上边界下移
+
+整体图像裁剪 ROI 是先于动态 ROI 的第一层过滤。
+它的形状是：下面矩形 + 上面梯形，不是单纯梯形，也不是上面小矩形。
+
+这次按要求把上方梯形的上边界从图像高度 50% 调到 55%：
+
+global_roi_top_row_ratio = 0.55
+
+对于 640x360：
+
+top_row = 360 * 0.55 = 198 px
+
+矩形连接处仍然是：
+
+global_roi_rect_top_ratio = 0.72
+rect_top = 360 * 0.72 = 259 px
+
+因此整体 ROI 多边形大致是：
+
+左下角 -> 右下角 -> 右侧矩形顶点 -> 梯形右上角 -> 梯形左上角 -> 左侧矩形顶点
+
+这就是右上角图里的青蓝色大 ROI 轮廓。
+
+三、完整处理流程
+
+1. 读取 mask_image
+
+从 DEFAULT_MASK_DIR 读取 png mask。
+当前路径：
+
+C:\Users\17396\Desktop\newlaneline\5.18\masks
+
+2. 二值化
+
+输入 mask 转灰度后 threshold：
+
+白色像素 = 255
+背景 = 0
+
+3. connected component 面积过滤
+
+先对整张二值图做 connected components。
+面积小于 scaled_min_area 的 component 会被去掉。
+640x360 下默认阈值大约是 11 px。
+
+4. 第一层整体图像 ROI 裁剪
+
+用“下面矩形 + 上面梯形”的全局 ROI 裁掉明显无关区域。
+这一步是为了先排除太远、太靠边、天空/背景等不该参与车道线识别的白色区域。
+
+5. left/right 分别提取 ROI 内 component
+
+每一侧不是把 ROI 内所有白点直接拟合，而是先在 mask ∩ ROI 里重新做 connected components。
+
+tracking 模式：
+
+如果上一帧该侧有有效一次拟合线 u = a*v + b，就围绕这条线生成动态 ROI。
+然后在 mask ∩ dynamic ROI 的所有 component 中，选择平均距离上一帧一次拟合线最近的 component。
+只使用这个 component 的像素参与后续拟合。
+
+init 模式：
+
+如果该侧没有有效上一帧线，或者 tracking 失败，就从图像中心线左右分半区初始化。
+初始化时会给 component 打分，优先选择：
+
+方向符合左右车道线约束的 component
+更靠近图像中心线的 component
+在底部附近能看到的 component
+行覆盖比例足够的 component
+
+这样避免左侧 ROI 里同时存在近端目标车道线和更外侧车道线时，把两根线混在一起拟合。
+
+6. 可靠性检查
+
+不再用固定像素点数量判断可靠。
+现在使用行覆盖比例：
+
+row_coverage_ratio = unique_white_rows / roi_height
+
+如果小于 10%，认为这一侧不可靠。
+tracking 模式下如果行覆盖不足，会同一帧直接 fallback 到 init 模式重新找。
+
+7. 图像坐标系一次拟合
+
+对选中的 component 像素做一次拟合：
+
+u = a*v + b
+
+这里 u 是图像横坐标，v 是图像纵坐标。
+这个一次拟合不是最终发布结果，它主要用于下一帧生成动态 ROI。
+
+8. 左右线角度和斜率约束
+
+左线必须满足图像里向左上方倾斜：
+
+left: a < 0
+
+右线必须满足图像里向右上方倾斜：
+
+right: a > 0
+
+同时会限制角度、斜率，避免横线、异常竖线、方向错误的线被接受。
+如果不满足，就认为这一帧该侧识别错误并重新初始化。
+
+9. 左右线间隔保护
+
+如果左右一次拟合线在中近处或底部距离太近，就认为两侧贴合/重叠。
+这时会拒绝该侧，防止左 ROI 锁到右车道线，或者右 ROI 锁到左车道线。
+
+10. 更新 stored line
+
+如果一次拟合通过检查，就更新该侧 stored_line。
+下一帧的 dynamic ROI 会以这条 stored_line 为中心生成。
+
+当前 damping 已经减弱：
+
+line_update_alpha = 0.90
+
+也就是新检测结果占 90%，上一帧保留 10%，动态 ROI 会更快跟随车道线变化。
+
+11. 像素点投影到 vehicle frame
+
+将选中 component 的像素点通过相机内参和外参投影到地面：
+
+pixel -> normalized camera ray -> vehicle ray -> z=0 ground intersection
+
+注意：这里使用的是按当前 mask 尺寸缩放后的 K_scaled。
+
+12. vehicle ROI 裁剪
+
+投影后的点再按 vehicle 坐标裁剪：
+
+x: 0 到 12 m
+y: -5 到 5 m
+
+这一步只看 vehicle 坐标，不再做图像 ROI。
+
+13. vehicle frame 二次拟合
+
+对 vehicle frame 中保留下来的点做二次拟合：
+
+y = c0 + c1*x + c2*x^2
+
+输出的 fitted lane points 是最终发布到 point cloud / CSV / debug 图里的 left 和 right 车道线。
+
+为了避免在观测不到的远处强行外推，输出 x 范围会限制在该侧实际投影点覆盖到的远端附近，而不是永远强行画满 12 m。
+
+14. center 生成
+
+只有 left 和 right 都成功产生二次拟合输出时，才生成 center：
+
+center = (left + right) / 2
+
+如果任意一侧失败，center 不发布。
+
+15. 输出和可视化
+
+preview.mp4：
+
+左上：原始 input mask_image
+右上：全局 ROI + left/right 当前 ROI + 当前选中白点
+左下：清理后的 mask + 一次拟合线 u=a*v+b
+右下：vehicle frame 下的二次拟合输出，也就是 published lane_lines output 的等效显示
+
+summary.csv：
+
+每帧每侧的状态、roi_mode、像素数量、行覆盖率、投影点数量、二次拟合点数量、一次拟合角度和参数。
+
+lane_lines_points.csv：
+
+最终输出的 left/right/center point cloud 等效点。
+
+四、右上角图二的绿色/红色动态 ROI 是什么，宽度怎么调
+
+右上角图二：
+
+青蓝色大轮廓 = 第一层整体图像 ROI，即下面矩形 + 上面梯形
+绿色半透明区域 = left 当前使用的 ROI
+红色半透明区域 = right 当前使用的 ROI
+绿色/红色区域里的浅色点 = 当前被选中的 component 像素
+
+tracking 时 ROI 宽度由 margin(row) 决定：
+
+far margin base = 42 px at 1920 width
+near margin base = 125 px at 1920 width
+
+当前图像是 640 宽，所以实际：
+
+far margin approximately 14 px
+near margin approximately 42 px
+
+ROI 总宽度约等于 2 * margin(row)。
+也就是说远处窄，近处宽，并且会随着上一帧一次拟合线的位置动态移动。
+
+五、左下角图三的绿色线和红色线是什么，怎么生成
+
+左下角图三标题是：
+
+image ROI and fitted u = a*v + b
+
+这里的绿色线是 left 的图像坐标一次拟合线。
+红色线是 right 的图像坐标一次拟合线。
+
+它们不是最终发布的 point cloud 结果，也不是二次拟合结果。
+
+生成逻辑：
+
+先从当前 side 的 ROI 中选出一个 connected component。
+对该 component 的像素点做一次线性拟合：
+
+u = a*v + b
+
+然后在图像上从 v_top 画到图像底部：
+
+top point:
+u_top = a * v_top + b
+
+bottom point:
+u_bottom = a * (rows - 1) + b
+
+绿色代表 left，红色代表 right。
+
+这两条线的作用是：
+
+用于检查当前图像坐标系的一次拟合是否正确。
+用于下一帧生成动态 ROI。
+用于斜率、角度、左右间隔、跳变等安全检查。
+
+最终发布结果请看右下角图四和 lane_lines_points.csv。
+
+六、本次完整运行结果
+
+输入 mask 尺寸：
+
+640x360
+
+完整序列：
+
+1809 frames
+
+运行后统计：
+
+left ok: 1533 / 1809
+right ok: 1799 / 1809
+center ok: 1523 / 1809
+
+主要剩余失败原因：
+
+left insufficient_row_coverage: 273
+left rejected_side_geometry: 3
+right insufficient_row_coverage: 7
+right rejected_side_geometry: 3
+
+这说明 640x360 的相机缩放和二次拟合输出已经恢复，剩下没有 center 的帧主要是某侧检测可靠性不足，按当前保护逻辑不发布。

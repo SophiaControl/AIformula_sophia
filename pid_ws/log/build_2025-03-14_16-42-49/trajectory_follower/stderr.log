@@ -1,0 +1,5 @@
+  File "/home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages/trajectory_follower/lya_preset.py", line 284
+    for self.current_target_index in range(self.pre_index,len(self.trajectory))
+                                                                              ^
+SyntaxError: invalid syntax
+

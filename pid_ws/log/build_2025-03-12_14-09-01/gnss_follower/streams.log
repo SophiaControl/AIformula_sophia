@@ -1,0 +1,25 @@
+[1.762s] Invoking command in '/home/nvidia/pid_ws/src/gnss_follower': PYTHONPATH=/home/nvidia/pid_ws/build/gnss_follower/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gnss_follower build --build-base /home/nvidia/pid_ws/build/gnss_follower/build install --record /home/nvidia/pid_ws/build/gnss_follower/install.log --install-scripts $base/lib/gnss_follower --single-version-externally-managed install_data
+[2.156s] running egg_info
+[2.157s] writing ../../build/gnss_follower/gnss_follower.egg-info/PKG-INFO
+[2.157s] writing dependency_links to ../../build/gnss_follower/gnss_follower.egg-info/dependency_links.txt
+[2.158s] writing entry points to ../../build/gnss_follower/gnss_follower.egg-info/entry_points.txt
+[2.158s] writing requirements to ../../build/gnss_follower/gnss_follower.egg-info/requires.txt
+[2.158s] writing top-level names to ../../build/gnss_follower/gnss_follower.egg-info/top_level.txt
+[2.208s] reading manifest file '../../build/gnss_follower/gnss_follower.egg-info/SOURCES.txt'
+[2.209s] writing manifest file '../../build/gnss_follower/gnss_follower.egg-info/SOURCES.txt'
+[2.209s] running build
+[2.209s] running build_py
+[2.210s] copying gnss_follower/lya_follower_gnss_0303.py -> /home/nvidia/pid_ws/build/gnss_follower/build/lib/gnss_follower
+[2.210s] running install
+[2.213s] running install_lib
+[2.215s] copying /home/nvidia/pid_ws/build/gnss_follower/build/lib/gnss_follower/lya_follower_gnss_0303.py -> /home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages/gnss_follower
+[2.216s] byte-compiling /home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages/gnss_follower/lya_follower_gnss_0303.py to lya_follower_gnss_0303.cpython-38.pyc
+[2.220s] running install_data
+[2.221s] running install_egg_info
+[2.224s] removing '/home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages/gnss_follower-0.0.0-py3.8.egg-info' (and everything under it)
+[2.224s] Copying ../../build/gnss_follower/gnss_follower.egg-info to /home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages/gnss_follower-0.0.0-py3.8.egg-info
+[2.225s] running install_scripts
+[2.254s] Installing lya_follower_gnss_0303 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+[2.255s] Installing path_gnss_0303 script to /home/nvidia/pid_ws/install/gnss_follower/lib/gnss_follower
+[2.255s] writing list of installed files to '/home/nvidia/pid_ws/build/gnss_follower/install.log'
+[2.316s] Invoked command in '/home/nvidia/pid_ws/src/gnss_follower' returned '0': PYTHONPATH=/home/nvidia/pid_ws/build/gnss_follower/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nvidia/pid_ws/install/gnss_follower/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gnss_follower build --build-base /home/nvidia/pid_ws/build/gnss_follower/build install --record /home/nvidia/pid_ws/build/gnss_follower/install.log --install-scripts $base/lib/gnss_follower --single-version-externally-managed install_data

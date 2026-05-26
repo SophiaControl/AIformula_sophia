@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/zw01/workspace/ros2_ws/install/vectornav/include/**",
+        "/home/zw01/workspace/ros2_ws/install/vectornav_msgs/include/**",
+        "/home/zw01/workspace/ros2_ws/install/ros2_socketcan/include/**",
+        "/home/zw01/workspace/ros2_ws/install/ros2_socketcan_msgs/include/**",
+        "/home/zw01/workspace/ros2_ws/install/common_cpp/include/**",
+        "/home/zw01/dev_ws/install/learning_interface/include/**",
+        "/opt/ros/foxy/include/**",
+        "/home/zw01/workspace/ros2_ws/src/aiformula/common/common_cpp/include/**",
+        "/home/zw01/workspace/ros2_ws/src/aiformula/perception/lane_line_publisher/include/**",
+        "/home/zw01/workspace/ros2_ws/src/aiformula/sensing/odometry_publisher/include/**",
+        "/home/zw01/workspace/ros2_ws/src/ros2_socketcan/ros2_socketcan/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

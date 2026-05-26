@@ -1,0 +1,8 @@
+# Local-only large assets and recordings
+*.bag
+*.db3
+*.db3-journal
+*.mcap
+
+/local_assets/*
+!/local_assets/README.md

@@ -1,0 +1,5 @@
+  File "/home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages/trajectory_follower/lya_preset.py", line 254
+    omega = (self.lya.lambda_a * sin alpha
+                                     ^
+SyntaxError: invalid syntax
+

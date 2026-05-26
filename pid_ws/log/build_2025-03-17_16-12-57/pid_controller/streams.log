@@ -1,0 +1,79 @@
+[0.486s] Invoking command in '/home/nvidia/pid_ws/build/pid_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake /home/nvidia/pid_ws/src/pid_controller -DCMAKE_INSTALL_PREFIX=/home/nvidia/pid_ws/install/pid_controller
+[0.739s] -- The C compiler identification is GNU 9.4.0
+[0.936s] -- The CXX compiler identification is GNU 9.4.0
+[0.951s] -- Check for working C compiler: /usr/bin/cc
+[1.085s] -- Check for working C compiler: /usr/bin/cc -- works
+[1.096s] -- Detecting C compiler ABI info
+[1.231s] -- Detecting C compiler ABI info - done
+[1.263s] -- Detecting C compile features
+[1.265s] -- Detecting C compile features - done
+[1.272s] -- Check for working CXX compiler: /usr/bin/c++
+[1.431s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[1.432s] -- Detecting CXX compiler ABI info
+[1.586s] -- Detecting CXX compiler ABI info - done
+[1.602s] -- Detecting CXX compile features
+[1.602s] -- Detecting CXX compile features - done
+[1.618s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[1.704s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[1.704s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.176s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[2.327s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.351s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[2.579s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[2.645s] -- Found FastRTPS: /opt/ros/foxy/include  
+[2.828s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.961s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[2.967s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.969s] -- Looking for pthread.h
+[3.116s] -- Looking for pthread.h - found
+[3.116s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.255s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[3.256s] -- Looking for pthread_create in pthreads
+[3.377s] -- Looking for pthread_create in pthreads - not found
+[3.378s] -- Looking for pthread_create in pthread
+[3.514s] -- Looking for pthread_create in pthread - found
+[3.516s] -- Found Threads: TRUE  
+[3.858s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[3.923s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[4.131s] -- Added test 'copyright' to check source files copyright and LICENSE
+[4.135s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[4.135s] -- Configured cppcheck include dirs: 
+[4.135s] -- Configured cppcheck exclude dirs and/or files: 
+[4.137s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[4.137s] -- Configured cpplint exclude dirs and/or files: 
+[4.140s] -- Added test 'flake8' to check Python code syntax and style conventions
+[4.142s] -- Added test 'lint_cmake' to check CMake code style
+[4.143s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[4.146s] -- Added test 'uncrustify' to check C / C++ code style
+[4.146s] -- Configured uncrustify additional arguments: 
+[4.148s] -- Added test 'xmllint' to check XML markup files
+[4.155s] -- Configuring done
+[4.168s] -- Generating done
+[4.176s] -- Build files have been written to: /home/nvidia/pid_ws/build/pid_controller
+[4.189s] Invoked command in '/home/nvidia/pid_ws/build/pid_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake /home/nvidia/pid_ws/src/pid_controller -DCMAKE_INSTALL_PREFIX=/home/nvidia/pid_ws/install/pid_controller
+[4.196s] Invoking command in '/home/nvidia/pid_ws/build/pid_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake --build /home/nvidia/pid_ws/build/pid_controller -- -j12 -l12
+[4.278s] [35m[1mScanning dependencies of target my_pid[0m
+[4.441s] [ 50%] [32mBuilding CXX object CMakeFiles/my_pid.dir/src/my_pid.cpp.o[0m
+[16.019s] [100%] [32m[1mLinking CXX executable my_pid[0m
+[16.545s] [100%] Built target my_pid
+[16.571s] Invoked command in '/home/nvidia/pid_ws/build/pid_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake --build /home/nvidia/pid_ws/build/pid_controller -- -j12 -l12
+[16.594s] Invoking command in '/home/nvidia/pid_ws/build/pid_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake --install /home/nvidia/pid_ws/build/pid_controller
+[16.615s] -- Install configuration: ""
+[16.615s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/lib/pid_controller/my_pid
+[16.619s] -- Set runtime path of "/home/nvidia/pid_ws/install/pid_controller/lib/pid_controller/my_pid" to ""
+[16.619s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/ament_index/resource_index/package_run_dependencies/pid_controller
+[16.619s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/ament_index/resource_index/parent_prefix_path/pid_controller
+[16.620s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/environment/ament_prefix_path.sh
+[16.620s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/environment/ament_prefix_path.dsv
+[16.622s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/environment/path.sh
+[16.623s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/environment/path.dsv
+[16.623s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/local_setup.bash
+[16.623s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/local_setup.sh
+[16.623s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/local_setup.zsh
+[16.624s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/local_setup.dsv
+[16.624s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.dsv
+[16.624s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/ament_index/resource_index/packages/pid_controller
+[16.624s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/cmake/pid_controllerConfig.cmake
+[16.624s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/cmake/pid_controllerConfig-version.cmake
+[16.624s] -- Installing: /home/nvidia/pid_ws/install/pid_controller/share/pid_controller/package.xml
+[16.629s] Invoked command in '/home/nvidia/pid_ws/build/pid_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nvidia/pid_ws/install/trajectory_follower:/home/nvidia/pid_ws/install/gnss_follower:/home/nvidia/workspace/ros2_ws/install/simulator:/home/nvidia/workspace/ros2_ws/install/motor_controller:/home/nvidia/workspace/ros2_ws/install/vehicle:/home/nvidia/workspace/ros2_ws/install/road_detector:/home/nvidia/workspace/ros2_ws/install/rear_potentiometer:/home/nvidia/workspace/ros2_ws/install/object_detector:/home/nvidia/workspace/ros2_ws/install/new_detector:/home/nvidia/workspace/ros2_ws/install/common_python:/home/nvidia/workspace/ros2_ws/install/lane_points:/home/nvidia/workspace/ros2_ws/install/kalman_filter:/home/nvidia/workspace/ros2_ws/install/auto_launch:/opt/ros/foxy /usr/bin/cmake --install /home/nvidia/pid_ws/build/pid_controller

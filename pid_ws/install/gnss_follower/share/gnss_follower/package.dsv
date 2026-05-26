@@ -1,0 +1,6 @@
+source;share/gnss_follower/hook/pythonpath.ps1
+source;share/gnss_follower/hook/pythonpath.dsv
+source;share/gnss_follower/hook/pythonpath.sh
+source;share/gnss_follower/hook/ament_prefix_path.ps1
+source;share/gnss_follower/hook/ament_prefix_path.dsv
+source;share/gnss_follower/hook/ament_prefix_path.sh

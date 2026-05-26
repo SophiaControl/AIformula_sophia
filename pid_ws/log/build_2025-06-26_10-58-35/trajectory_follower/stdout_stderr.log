@@ -1,0 +1,47 @@
+running egg_info
+writing ../../build/trajectory_follower/trajectory_follower.egg-info/PKG-INFO
+writing dependency_links to ../../build/trajectory_follower/trajectory_follower.egg-info/dependency_links.txt
+writing entry points to ../../build/trajectory_follower/trajectory_follower.egg-info/entry_points.txt
+writing requirements to ../../build/trajectory_follower/trajectory_follower.egg-info/requires.txt
+writing top-level names to ../../build/trajectory_follower/trajectory_follower.egg-info/top_level.txt
+reading manifest file '../../build/trajectory_follower/trajectory_follower.egg-info/SOURCES.txt'
+writing manifest file '../../build/trajectory_follower/trajectory_follower.egg-info/SOURCES.txt'
+running build
+running build_py
+copying trajectory_follower/lya_follower_fixedpath.py -> /home/nvidia/pid_ws/build/trajectory_follower/build/lib/trajectory_follower
+copying trajectory_follower/lya_follower_fixedpath_record.py -> /home/nvidia/pid_ws/build/trajectory_follower/build/lib/trajectory_follower
+running install
+running install_lib
+copying /home/nvidia/pid_ws/build/trajectory_follower/build/lib/trajectory_follower/lya_follower_fixedpath.py -> /home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages/trajectory_follower
+copying /home/nvidia/pid_ws/build/trajectory_follower/build/lib/trajectory_follower/lya_follower_fixedpath_record.py -> /home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages/trajectory_follower
+byte-compiling /home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages/trajectory_follower/lya_follower_fixedpath.py to lya_follower_fixedpath.cpython-38.pyc
+byte-compiling /home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages/trajectory_follower/lya_follower_fixedpath_record.py to lya_follower_fixedpath_record.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages/trajectory_follower-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/trajectory_follower/trajectory_follower.egg-info to /home/nvidia/pid_ws/install/trajectory_follower/lib/python3.8/site-packages/trajectory_follower-0.0.0-py3.8.egg-info
+running install_scripts
+Installing enhanced_lya_record script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_0221 script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_avoid_preset script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_follower script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_follower_0122 script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_follower_connected script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_follower_connected_global script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_follower_connected_omegat_global script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_follower_fixedpath script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_follower_fixedpath_record script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_oa script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_precircle script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_preset script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_record script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_superrecord script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing lya_superrecord2 script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing p_follower script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing p_follower_connected script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing pid_follower script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing pid_follower_connected script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing pid_follower_connected_global script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing pid_preset script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+Installing pp_preset script to /home/nvidia/pid_ws/install/trajectory_follower/lib/trajectory_follower
+writing list of installed files to '/home/nvidia/pid_ws/build/trajectory_follower/install.log'
