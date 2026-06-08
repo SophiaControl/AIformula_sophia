@@ -6,3 +6,12 @@
 
 /local_assets/*
 !/local_assets/README.md
+
+# Local-only new lane line media outputs
+/newlaneline/**/*.mp4
+/newlaneline/**/*.mov
+/newlaneline/**/*.avi
+/newlaneline/**/*.mkv
+/newlaneline/**/*.webm
+/newlaneline/**/*.m4v
+/newlaneline/**/sample_frames/
