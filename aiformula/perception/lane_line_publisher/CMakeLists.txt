@@ -14,12 +14,7 @@ find_package(OpenCV REQUIRED)
 find_package(common_cpp REQUIRED)
 
 add_executable(lane_line_publisher
-  src/cubic_line_fitter.cpp
-  src/lane_line_publisher_node.cpp
   src/lane_line_publisher.cpp
-  src/lane_line.cpp
-  src/lane_pixel_finder.cpp
-  src/parametrized_polyline.cpp
 )
 target_include_directories(lane_line_publisher PRIVATE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
