@@ -115,7 +115,7 @@ class Follower(Node):
         sin_beta  = math.sin(beta)
 
         # 4. 速度 / 角速度指令（完全按原公式 + omega_des 前馈）
-        v = (V_T * math.cos(beta) + LAM_V * r) * math.cos(alpha)  # 仅用全局 dx
+        v = (V_T * math.cos(beta) + LAM_V * r) * math.cos(alpha)  # 使用极坐标距离 r (= rho)
         omega = (
             LAM_A * math.sin(alpha)
             + (K1 / sin_alpha) * (

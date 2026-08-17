@@ -7,7 +7,7 @@ if exist(ckpt,'file')
     fprintf('>>> 已加载 checkpointmatbo：完成 %d / %d 次评估。\n', iter, NMAX);
 else
     N0   = 15;
-    NMAX = 35;
+    NMAX = 32;  % Hardware campaign: 15 initial evaluations + 17 BO evaluations.
     optimVars = [
         optimizableVariable('lambda_v',[1e-4 0.5 ],'Transform','log')
         optimizableVariable('lambda_a',[1e-3 1.5 ],'Transform','log')
