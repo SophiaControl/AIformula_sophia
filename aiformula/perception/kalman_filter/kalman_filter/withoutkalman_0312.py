@@ -5,6 +5,9 @@ import numpy as np
 from geometry_msgs.msg import Pose2D
 from std_msgs.msg import Bool
 
+TARGET_SPEED_MPS = 2.0
+PATH_SPACING_EPSILON_M = 1.0e-6
+
 class DataProcessingNode(Node):
     def __init__(self):
         super().__init__('data_processing_node')
@@ -55,10 +58,20 @@ class DataProcessingNode(Node):
             Cx, Cy = self.C
             theta_1 = np.arctan2(By - Ay, Bx - Ax)
             theta_2 = np.arctan2(Cy - By, Cx - Bx)
+            heading_change = np.arctan2(
+                np.sin(theta_2 - theta_1), np.cos(theta_2 - theta_1)
+            )
+            heading_spacing = 0.5 * (
+                np.hypot(Bx - Ax, By - Ay) + np.hypot(Cx - Bx, Cy - By)
+            )
+            target_heading_rate = (
+                0.0 if heading_spacing <= PATH_SPACING_EPSILON_M
+                else TARGET_SPEED_MPS * heading_change / heading_spacing
+            )
             filtered_omega_t = Pose2D(
                 x=theta_1,
                 y=theta_2,
-                theta=(theta_2 - theta_1) / 0.1
+                theta=target_heading_rate
             )
             self.publisher_omega_t.publish(filtered_omega_t)
             filtered_pose = Pose2D(

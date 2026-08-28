@@ -306,8 +306,14 @@ class GnssLyaFollower(Node):
         theta_bc = math.atan2(cy - by, cx - bx)
         dtheta = normalize_angle(theta_bc - theta_ab)
 
-        # 由 b->c 的方向估算参考角速度
-        omega_t = dtheta
+        # A、B、C 是空间路径点；由局部曲率和目标速度计算参考角速度
+        heading_spacing = 0.5 * (
+            math.hypot(bx - ax, by - ay) + math.hypot(cx - bx, cy - by)
+        )
+        omega_t = (
+            0.0 if heading_spacing <= 1.0e-6
+            else self.lya.v_t * dtheta / heading_spacing
+        )
         self.lya.omega_t = omega_t
 
         v_t = self.lya.v_t

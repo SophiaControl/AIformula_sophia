@@ -87,10 +87,20 @@ class Follower(Node):
         B = self.path[self.idx+1]
         C = self.path[self.idx+2]
 
-        # 2. 计算 θ_BA, θ_CB, omega_des
+        # 2. A、B、C 是空间路径点；由局部曲率和目标速度计算参考角速度
         theta_BA = math.atan2(B[1]-A[1], B[0]-A[0])   # 作为目标切向
         theta_CB = math.atan2(C[1]-B[1], C[0]-B[0])
-        omega_des = math.atan2(math.sin(theta_CB - theta_BA), math.cos(theta_CB - theta_BA)) / DT
+        heading_change = math.atan2(
+            math.sin(theta_CB - theta_BA), math.cos(theta_CB - theta_BA)
+        )
+        heading_spacing = 0.5 * (
+            math.hypot(B[0]-A[0], B[1]-A[1])
+            + math.hypot(C[0]-B[0], C[1]-B[1])
+        )
+        omega_des = (
+            0.0 if heading_spacing <= EPS
+            else V_T * heading_change / heading_spacing
+        )
         phi_t = theta_BA
         # 3. 误差计算（严格按你原公式写法）
         dx, dy =  A[0] - self.x , A[1] - self.y

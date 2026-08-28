@@ -17,6 +17,8 @@ import numpy as np
 np.float = float
 from datetime import datetime
 
+EPS = 1e-4
+
 class LYAController:
     def __init__(self, v_t, lambda_v, lambda_a, k1, k2):
         self.v_t = v_t
@@ -209,13 +211,8 @@ class TrajectoryFollower(Node):
             v = self.lya.v_t
             omega = 0.0
         else:
-            sin_alpha = math.sin(alpha)
-            if abs(sin_alpha) < epsilon:
-                sin_alpha = epsilon
-
+            sin_alpha = math.sin(alpha) if abs(math.sin(alpha)) > EPS else EPS * math.copysign(1, alpha)
             sin_beta = math.sin(beta)
-            if abs(sin_beta) < epsilon:
-                sin_beta = epsilon
 
             # ---------- 计算线速度 v ----------
         v = ((self.lya.v_t) * math.cos(beta) + self.lya.lambda_v * r) * math.cos(alpha)
